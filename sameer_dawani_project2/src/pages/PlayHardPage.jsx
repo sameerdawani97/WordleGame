@@ -9,6 +9,7 @@ import ResetButton from './ResetButton';
 const PlayNormalPage = () => {
 
     const {secretWord, setSecretWord}= useContext(difficultyContext);
+    const {selectedDifficulty, setSelectedDifficulty}= useContext(difficultyContext);
     const {attempts, setAttempts} = useContext(difficultyContext);
     const {result, setResult}= useContext(difficultyContext);
     const {letters, setLetters} = useContext(difficultyContext);
@@ -37,6 +38,7 @@ const PlayNormalPage = () => {
 
     const restart = () => {
         const newSecretWord = generateSecretWord();
+        setSelectedDifficulty('hard');
         setSecretWord(newSecretWord);
         setLetters(['', '', '', '', '', '', '']);
         setAttempts(5);

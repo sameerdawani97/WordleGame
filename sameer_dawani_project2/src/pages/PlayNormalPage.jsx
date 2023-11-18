@@ -34,6 +34,24 @@ const PlayNormalPage = () => {
     setLetters(newLetters);
   };
 
+  const restart = () => {
+    const newSecretWord = generateSecretWord();
+    setSelectedDifficulty('normal');
+    setSecretWord(newSecretWord);
+    setLetters(['', '', '', '', '', '']);
+    setAttempts(6);
+    setResult('');
+  };
+
+  const generateSecretWord = () => {
+    const normal = ['little', 'wordle', 'Banana', 'Circle', 'purple', 'Rocket', 'Winter', 'Square', 'Camera', 'Doctor'];
+    const randomIndex = Math.floor(Math.random() * normal.length);
+    return normal[randomIndex].toUpperCase();
+  };
+
+  useEffect(() => {
+    restart();
+  }, []);
 
   return (
     <div>
