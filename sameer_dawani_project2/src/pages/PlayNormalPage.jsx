@@ -8,6 +8,7 @@ import ResetButton from './ResetButton';
 //componenet to play normal game.
 const PlayNormalPage = () => {
   const {secretWord, setSecretWord}= useContext(difficultyContext);
+  const {selectedDifficulty, setSelectedDifficulty}= useContext(difficultyContext);
   const {attempts, setAttempts} = useContext(difficultyContext);
   const {result, setResult}= useContext(difficultyContext);
   const {letters, setLetters} = useContext(difficultyContext);
