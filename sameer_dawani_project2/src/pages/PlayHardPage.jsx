@@ -35,6 +35,23 @@ const PlayNormalPage = () => {
         setLetters(newLetters);
     };
 
+    const restart = () => {
+        const newSecretWord = generateSecretWord();
+        setSecretWord(newSecretWord);
+        setLetters(['', '', '', '', '', '', '']);
+        setAttempts(5);
+        setResult('');
+    };
+
+    const generateSecretWord = () => {
+        const hard = ['Freedom', 'Weather', 'Explore', 'Journey', 'Library', 'Justice', 'Silence', 'Healthy', 'Perfect', 'Control'];
+        const randomIndex = Math.floor(Math.random() * hard.length);
+        return hard[randomIndex].toUpperCase();
+    };
+ 
+    useEffect(() => {
+        restart();
+        }, []);
 
   return (
     <div>
